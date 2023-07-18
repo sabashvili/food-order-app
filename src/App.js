@@ -15,6 +15,10 @@ function App() {
     setCartIsShown(condition);
   };
 
+  const finalListOfMeal = (ListOfMeal) => {
+    console.log(ListOfMeal);
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -23,7 +27,7 @@ function App() {
       }}
     >
       <Header />
-      <Meals />
+      <Meals onFinalListOfMeal={finalListOfMeal} />
       {cartIsShown ? <Cart /> : ""}
     </UserContext.Provider>
   );
