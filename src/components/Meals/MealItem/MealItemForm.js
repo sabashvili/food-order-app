@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classes from "./MealItemForm.module.css";
 
 const MealItemForm = (props) => {

@@ -6,10 +6,6 @@ const CartItem = (props) => {
   const context = useContext(UserContext);
 
   const decreaseClickHandler = () => {
-    // const currElementIndex = context.listOfAddedMealItems.findIndex(
-    //   (meal) => meal.id == props.id
-    // );
-    // context.listOfAddedMealItems[currElementIndex].amount--;
     context.decrIncrAmount(props.id, "decrease");
   };
 
