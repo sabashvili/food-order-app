@@ -56,7 +56,7 @@ const AvailableMeals = (props) => {
         }
         const otherMeals = addMeal.filter((oldMeal) => oldMeal.id !== idOfMeal);
 
-        setAddMeal([newMeal, ...otherMeals]);
+        setAddMeal([newMeal, ...otherMeals].filter((meal) => meal.amount > 0));
       }
     });
   };

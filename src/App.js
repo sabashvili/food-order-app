@@ -26,19 +26,22 @@ function App() {
       0
     );
     setNumberOfItems(totalAmountOfAddedMeals);
+    console.log(addedListOfMeals);
   }, [addedListOfMeals]);
 
   const decreaseOrIncreaseAmount = (id, changeConditional) => {
     const currElement = addedListOfMeals.find((meal) => meal.id == id);
     if (changeConditional == "decrease") {
       currElement.amount--;
-    } else {
+    } else if (changeConditional == "increase") {
       currElement.amount++;
     }
+
     const otherElement = addedListOfMeals.filter((meal) => meal != currElement);
     const decreasedOrIncreasedList = [currElement, ...otherElement].filter(
-      (meal) => meal.amount > 0
+      (meal) => meal.amount >= 1
     );
+
     setAddedListOfMeals(decreasedOrIncreasedList);
   };
 
